@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'/>
+		<title>Colorbox Examples</title>
+		<style>
+			body{font:12px/1.2 Verdana, sans-serif; padding:0 10px;}
+			a:link, a:visited{text-decoration:none; color:#416CE5; border-bottom:1px solid #416CE5;}
+			h2{font-size:13px; margin:15px 0 0 0;}
+		</style>
+		<link rel="stylesheet" href="colorbox.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="jquery.colorbox.js"></script>
+		<script>
+			$(document).ready(function(){
+				$(".inline").colorbox({inline:true, width:"50%"});
+				//Example of preserving a JavaScript event for inline calls.
+				$(".ajax").colorbox({inline:true, width:"50%"});
+				$(".ajax1").colorbox({inline:true, width:"50%"});
+			});
+		</script>
+	</head>
+	<body>
+
+		<p><a class='inline' href="#inline_content">Inline HTML</a></p>	
+		<!-- This contains the hidden content for inline calls -->
+		<div style='display:none'>
+			<div id='inline_content' style='padding:10px; background:#fff;'>
+			<p><strong>This content comes from a hidden element on this page.</strong></p>
+			<p>The inline option preserves bound JavaScript events and changes, and it puts the content back where it came from when it is closed.</p>
+			<p>Updating Content Example:<br />
+			<a class="ajax" href="#inline_content2">Click here to load new content</a></p>
+			</div>
+			<div id = "inline_content2" style='padding:10px; background:#fff;'> <a class="ajax1" href="#inline_content3">Click here to load new content</a></p><p>just try me</p>
+			<div style='display:none'>
+			<div id='inline_content3' style='padding:10px; background:#fff;'>
+			<p>i am just checking </p>
+			</div>
+	</body>
+</html>
